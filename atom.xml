@@ -4,7 +4,7 @@
   <title><![CDATA[Empty Thoughts]]></title>
   <link href="http://TheEmpty.github.com/atom.xml" rel="self"/>
   <link href="http://TheEmpty.github.com/"/>
-  <updated>2012-08-17T14:18:17-04:00</updated>
+  <updated>2012-08-18T20:20:02-04:00</updated>
   <id>http://TheEmpty.github.com/</id>
   <author>
     <name><![CDATA[Mohammad El-Abid]]></name>
@@ -12,6 +12,132 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Eid Mubarak!]]></title>
+    <link href="http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak/"/>
+    <updated>2012-08-18T14:30:00-04:00</updated>
+    <id>http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak</id>
+    <content type="html"><![CDATA[<p>To those that are ending Eid tomorrow, you can come back tomorrow! <strong>Since I&#8217;m here,</strong> why don&#8217;t I tell you about the post I plan on releasing next Friday? At the bottom is the output of the current program, though it might change a bit. It&#8217;s built in C and only uses the standard io and standard library. It will be a multipart series, with the first part, at least, covering the code to generate the output below. In future parts (or part) (hopefully the Friday after, maybe I&#8217;ll break the schedule and release it early), I&#8217;ll cover A.I. and making a pretty display in the terminal. The post will assume you know how to program and know C-style syntax (Java or JavaScript use C-style syntax). I&#8217;ll also throw in a few links to articles about setting up a C IDE.</p>
+
+<p>I&#8217;ll <strong>C</strong> you later, output after the break.</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Player X, it's your move.
+</span><span class='line'>
+</span><span class='line'>1 | 2 | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | 5 | 6
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | 9
+</span><span class='line'>
+</span><span class='line'>I'll take spot: 1
+</span><span class='line'>Player O, it's your move.
+</span><span class='line'>
+</span><span class='line'>X | 2 | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | 5 | 6
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | 9
+</span><span class='line'>
+</span><span class='line'>I'll take spot: 2
+</span><span class='line'>Player X, it's your move.
+</span><span class='line'>
+</span><span class='line'>X | O | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | 5 | 6
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | 9
+</span><span class='line'>
+</span><span class='line'>I'll take spot: 5
+</span><span class='line'>Player O, it's your move.
+</span><span class='line'>
+</span><span class='line'>X | O | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | X | 6
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | 9
+</span><span class='line'>
+</span><span class='line'>I'll take spot: 6
+</span><span class='line'>Player X, it's your move.
+</span><span class='line'>
+</span><span class='line'>X | O | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | X | O
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | 9
+</span><span class='line'>
+</span><span class='line'>I'll take spot: 9
+</span><span class='line'>X | O | 3
+</span><span class='line'>--+---+--
+</span><span class='line'>4 | X | O
+</span><span class='line'>--+---+--
+</span><span class='line'>7 | 8 | X
+</span><span class='line'>
+</span><span class='line'>WE HAVE A WINNER!
+</span><span class='line'>Congratulations Player X!
+</span><span class='line'>Do you want to play again? (y/n) n</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
