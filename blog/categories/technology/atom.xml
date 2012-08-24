@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: technology | Empty Thoughts]]></title>
+  <link href="http://TheEmpty.github.com/blog/categories/technology/atom.xml" rel="self"/>
+  <link href="http://TheEmpty.github.com/"/>
+  <updated>2012-08-24T05:41:20-04:00</updated>
+  <id>http://TheEmpty.github.com/</id>
+  <author>
+    <name><![CDATA[Mohammad El-Abid]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[C Beauty In Everything (Part 1)]]></title>
+    <link href="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/"/>
+    <updated>2012-08-24T12:00:00-04:00</updated>
+    <id>http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1</id>
+    <content type="html"><![CDATA[<p>The other day someone was saying how they didn't quite like Objective-C. They went on to say how it was weird that the <code>@</code> in front of strings made it harder to read. When I explained that this was to separate character arrays from <code>NSStrings</code> he was curious to why there were,</p>
+
+<p><blockquote><p>Ok, so what the fuck do you need two types of strings for? NSStrings? C-Style strings? Isn't a string...a string? Like...every other language I've seen only uses one type.</p><footer><strong>TheMaster</strong> <cite><a href='http://webdevrefinery.com/forums/topic/11869-php-a-fractal-of-bad-design/page<strong>view</strong>findpost<strong>p</strong>128102'>wdR Post</a></cite></footer></blockquote></p>
+
+<!-- more -->
+
+
+<p>In response to his post, I created and <a href="http://webdevrefinery.com/forums/topic/11869-php-a-fractal-of-bad-design/page__view__findpost__p__128118">posted</a> my first C program. I had worked with C++ before, so it wasn't too foreign. I was surprised at how easy it was to write low-level code! Perhaps it was just easy because I'm used to hearing C keywords and issues, but I found that I had the knowledge to write C without issue! So I decided to try something harder. Something most programmers do in an intro course, but one that I have yet to do. A tic-tack-toe program.</p>
+
+<p>And this is in no way a bash toward "TheMaster" who I quoted above. I just though it was good to give the pretense to this article. With the pretense being that we're getting most coders started on super high-level languages, but not teaching them what is really happening. Hopefully this tutorial will get people more interested in C and family. If this blog takes off I would love to team up with some artist and get into writing some games in C++, not something I can really do without graphics!</p>
+
+<h2>Pre-Thanks</h2>
+
+<p>Before you read, I want to thank you for taking the time to read this. It's been awhile since I've written technical tutorials, so please feel free to leave a comment or email me via mohammad {att} el-abid.com with comments or suggestions.</p>
+
+<h2>A Few Assumptions Before You Read</h2>
+
+<p>I assume that you're comfortable with C-style syntax. If you've coded in Java, JavaScript, or variants of C, you should be able to pick the syntax up quickly.</p>
+
+<h2>Getting a Compiler</h2>
+
+<h3>Windows</h3>
+
+<p>For windows users, you can checkout <a href="http://netbeans.org/features/cpp/">NetBeans</a>, <a href="http://www.codeblocks.org/">Code::Blocks</a>, or Microsoft®'s <a href="http://www.microsoft.com/visualstudio/11/en-us/products/express">visual studio</a>.</p>
+
+<h3>Linux</h3>
+
+<p>For linux, I use <a href="http://gcc.gnu.org/">gcc</a> which you should be able to install using your operating system's package management or download the source from their site and build it yourself.</p>
+
+<h3>Mac</h3>
+
+<p>After you install <a href="https://developer.apple.com/xcode/">XCode 4.0</a> you can follow <a href="http://www.youtube.com/watch?v=7f6QIInt1M8">this YouTube video</a>.</p>
+
+<h1>Let's C About Tic-Tac-Toe</h1>
+
+<h2>Creating the Gameboard</h2>
+
+<p>We'll start by creating a 2D array. This is fairly straight forward since we know the width and height of the array. I consider the first array vertical and the array inside of that array as horizontal. If you have trouble understanding 2D arrays, but know what a hash is, think of it like this:</p>
+
+<p><code>ruby
+{
+  row0: [blank, blank, blank],
+  row1: [blank, blank, blank],
+  row2: [blank, blank, blank]
+}
+</code></p>
+
+<p>So as I was saying, we know the size of board so we can have the compiler allocate the memory for the array. But I'll be posting a follow up post soon about storing a 2D array of any size using <code>malloc</code>, <code>free</code>, and <code>char**</code>.</p>
+
+<p>``` objc</p>
+
+<h1>import &lt;stdlib.h></h1>
+
+<p>char board[3][3];</p>
+
+<p>void cleanBoard()
+{</p>
+
+<pre><code>char i, j;
+for(i = 0; i &lt; 3; i++)
+    for(j = 0; j &lt; 3; j++)
+        board[i][j] = 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>That was pretty easy for a low level language right? The <code>cleanBoard()</code> method is not even necessary at this point, but I currently don't trust default values in C, something I hope to talk about in the follow up post mentioned above. With that said, lets work on visualizing this array as a tic-tac-toe board!</p>
+
+<h2>Displaying the Array</h2>
+
+<p>If you don't have <code>#import &lt;stdio.h&gt;</code> in your file, be sure to add it now as we'll be using <code>print</code> and <code>printf</code> (print (with) <strong>f</strong>ormat). Here is an example of the format that I want to use to display the board:</p>
+
+<p><code>
+X | 2 | 3
+--+---+--
+4 | X | 6
+--+---+--
+7 | 8 | X
+</code></p>
+
+<p>Though feel free to make yours more fancy if you wish. Well, first things first. We need to define what marks an 'X', an 'O', or a blank spot. So at the top of my file I added:</p>
+
+<p>``` objc</p>
+
+<h1>define BLANK 0</h1>
+
+<h1>define X 3</h1>
+
+<h1>define O 5</h1>
+
+<p>```</p>
+
+<p>Now also modify your <code>cleanBoard()</code> to set the elements to <code>BLANK</code> and not <code>0</code> in case you decide to change it. Now lets get cracking on this method. First we'll modify the board so we can see that <code>displayBoard()</code> shows Xs and Os as well as the numbers.</p>
+
+<p><code>objc
+int main(int argc, const char * argv[])
+{
+  cleanBoard();
+  board[0][0] = X; // top left
+  board[1][1] = O; // center
+  board[2][2] = X; // bottom right
+  displayBoard(); // we'll develop this next
+}
+</code></p>
+
+<p>``` objc
+void displayBoard()
+{
+  char i;
+  for(i = 0; i &lt; 3; i++) // loop over the rows
+  {</p>
+
+<pre><code>// this is the "x | y | z" format
+printf("%c | %c | %c\n", markerFor(i, 0), markerFor(i, 1), markerFor(i, 2));
+// if we're not in the last row, output a border
+if(i != 2)
+  printf("--+---+--\n");
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>``` objc
+char markerFor(char x, char y)
+{
+  // load the current 'mark' (X, O, BLANK) of this position
+  char mark = board[x][y];</p>
+
+<p>  // if it is X or O, return with their character.
+  if (mark == X)</p>
+
+<pre><code>return 'X';
+</code></pre>
+
+<p>  else if (mark == O)</p>
+
+<pre><code>return 'O';
+</code></pre>
+
+<p>  else
+  {</p>
+
+<pre><code>// if it isn't X or O, we need to find out the
+// numerical value of this position.
+
+// We now that each row holds 3 and that x starts
+// at zero, so for the first row x * 3 = 0 and
+// the 2nd row x * 3 = 3.
+
+// The y is just an offset within that X, so the
+// middle spot (5) is in the second row (x * 3) = 3
+// and in the second spot, which in an array index
+// is only 1, so we end up with four. Since we want
+// to count up from one instead of zero, we add one.
+
+char num = (x * 3) + y + 1;
+
+// Because we want to display this character, we have
+// to return it's position in the ASCII table. Since
+// all chars are numbers (index in ASCII table) and
+// numbers 0-9 are ASCII (but 10 is not, it's 1 and 0)
+// and sequential in the table, we can just add to the
+// value of '0' or add it to '1' and drop the +1 above. 
+return '0' + num;
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>The reason I did the code in several different "blocks" above is because: 1) this is the order in which I would develop them because, 2) it is the order in which they are executed. However, in order to use a method in C, it either has to be declared or defined before any attempt at usage. Since we're keeping thing simple, we'll just define them before they're used. Your file should look something like this now, with the ellipses representing code.</p>
+
+<p>``` objc</p>
+
+<h1>import &lt;stdio.h></h1>
+
+<h1>define BLANK 0</h1>
+
+<h1>define X 3</h1>
+
+<h1>define O 5</h1>
+
+<p>char board[3][3];</p>
+
+<p>void cleanBoard()
+{
+  // …
+}</p>
+
+<p>char markerFor(char x, y)
+{
+  // …
+}</p>
+
+<p>void displayBoard()
+{
+  // …
+}</p>
+
+<p>int main(int argc, const char * argv[])
+{
+  cleanBoard();
+  board[0][0] = X; // top left
+  board[1][1] = O; // center
+  board[2][2] = X; // bottom right
+  displayBoard();
+}
+```</p>
+
+<p>And when you build and run the application you should get the following. Once you confirmed that, lets get started with the user input!</p>
+
+<p><code>
+X | 2 | 3
+--+---+--
+4 | O | 6
+--+---+--
+7 | 8 | X
+</code></p>
+
+<h2>Let the User Tell the Story</h2>
+
+<p>Now we need to get some input from the user. We'll use a built-in C function <code>getchar()</code>. We do run into a small issue with this function though. If a user inputs <code>123\n</code> we would assume they pressed <code>1</code>, continue and then the next time we use <code>getchar()</code> we would get <code>2</code>! So we need to make sure we clear that "buffer". Thankfully this isn't difficult since we can just loop until <code>getchar()</code> is <code>\n</code> since <code>1\n</code> would still product the <code>\n</code>.</p>
+
+<p>Another issue that might strike you as odd is that C doesn't have a boolean type. It uses <code>1</code> in place of <code>true</code> and <code>0</code> in place of <code>false</code>. And by in place, I don't mean instead of since languages that use <code>true</code> and <code>false</code> are generally based off of C!</p>
+
+<p>``` objc
+char* nameFor(char marker)
+{</p>
+
+<pre><code>if(marker == X)
+    return "X";
+else if (marker == O)
+    return "O";
+else if (marker == BLANK)
+    return "blank";
+else
+    return "???";
+</code></pre>
+
+<p>}</p>
+
+<p>void userInput(char marker)
+{</p>
+
+<pre><code>// C does not have a boolean type, so we'll use a char with 0 and 1
+char played = 0;
+// until they have picked a valid spot
+while(played == 0)
+{
+    // we're going to tell the players whose move it is
+    printf("%s, it's your move.\n\n", nameFor(marker));
+    // show them the board
+    displayBoard();
+    // and ask them where the want to go.
+    printf("\nI'll take spot: ");
+
+    // we subtract by '0' to get the integral value
+    // we then remove one because our index starts at 0
+    char spot = getchar() - '0' - 1;
+    // because there are three spots in a row and we're
+    // starting at zero (so 3rd spot is (2/3) = 0) we
+    // can simply divide by 3 to get the x coordinate.
+    char x = (spot / 3);
+    // the y coordinate is going to be the remainder of
+    // spots not used in the x coordinate. So we'll use
+    // the modulas operator to give us the remainder.
+    char y = (spot % 3);
+
+    // getchar() gives you one character at a time.
+    // so 123 whould need to use getchar() three times.
+    // however, when the user selects a spot they type
+    // in "1\n" so we need to clear the upto the \n
+    // so we don't get it in the next userInput()
+    char last = getchar();
+    while(last != '\n') // until we reach the \n
+        last = getchar(); // load the next character
+
+    // now, before we attempt to access the array, we need
+    // to make sure that the x and y coordinates are in an
+    // acceptable range, 0-3. Then before we make the move
+    // we need to make sure nothing is there. Otherwise
+    // it's an invalid move.
+    if(x &lt; 3 &amp;&amp; x &gt;= 0 &amp;&amp; y &lt; 3 &amp;&amp; y &gt;= 0 &amp;&amp; board[x][y] == BLANK)
+    {
+        board[x][y] = marker;
+        played = 1; // set to "true" to brake the loop
+    }
+    else
+        printf("\nInvalid move, please try again.\n");
+}
+</code></pre>
+
+<p>}</p>
+
+<p>int main(int argc, const char * argv[])
+{</p>
+
+<pre><code>clearBoard();
+
+// because we can't determine a winning or loosing game,
+// we don't want to have to have a loop yet.
+char player = X;
+userInput(player);
+player = (player == X) ? O : X;
+userInput(player);
+
+displayBoard();
+</code></pre>
+
+<p>}
+```</p>
+
+<h2>Determining the Winner</h2>
+
+<p>In order to win tic-tac-toe, you must get three of your "marker" in a row. If we take a look at the board, there are a few ways to do this.</p>
+
+<p><code>
+Column:      Row:          Diagonal:
+ 1 | 2 | X     X | X | X     X | 2 | 3
+ --+---+--     --+---+--     --+---+--
+ 4 | 5 | X     4 | 5 | 6     4 | X | 6
+ --+---+--     --+---+--     --+---+--
+ 7 | 8 | X     7 | 8 | 9     7 | 8 | X
+</code></p>
+
+<p>For the columns we can just "scan" them from left to right. We'll check to see if one of them isn't blank and if it isn't blank, if the other items in that row match it. If they do, that's an entire row of the same thing, so that thing wins. We can apply this to row as well. For diagonal we can use the same logic, but we can't "scan" it easily so we'll just write both diagonal conditions out by hand. We'll return "<code>false</code>", <code>0</code>, when we don't find anything. And if the board is all used up (there are no blank spots) we'll return that it's a <code>TIE</code> (make sure to add <code>#define TIE 1</code> to the top of your source).</p>
+
+<p>``` objc
+char winner()
+{</p>
+
+<pre><code>// first lets check the rows of the board, left to right
+char i;
+for(i = 0; i &lt; 3; i++)
+    // if the first one isn't blank and all of them are
+    // the same marker
+    if((board[i][0] != BLANK) &amp;&amp; (board[i][0] == board[i][1]) &amp;&amp; (board[i][1] == board[i][2]))
+        return board[i][0]; // return the marker
+
+// now lets check the columns, top to bottom
+for(i = 0; i &lt; 3; i++)
+    // we'll use the same strategy
+    if((board[0][i] != BLANK) &amp;&amp; (board[0][i] == board[1][i]) &amp;&amp; (board[1][i] == board[2][i]))
+        return board[0][i];
+
+// now for the diagonals
+// we'll start from top left to bottom right
+if((board[0][0] != BLANK) &amp;&amp; (board[0][0] == board[1][1]) &amp;&amp; (board[1][1] == board[2][2]))
+    return board[1][1];
+
+// and bottom left to top right
+if((board[2][0] != BLANK) &amp;&amp; (board[2][0] == board[1][1]) &amp;&amp; (board[1][1] == board[0][2]))
+    return board[1][1];
+
+// make sure we haven't used the entire board yet
+char count = 0;
+for(i = 0; i &lt; 3; i++)
+{
+    char j;
+    for(j = 0; j &lt; 3; j++)
+    {
+        if(board[i][j] != BLANK)
+            count++;
+    }
+}
+if(count &gt;= 9)
+    return TIE;
+
+
+// if we haven't reached a winner yet, return 0 for 'false'
+return 0;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>And now we have the ability to make a game loop! We want them to continue playing while there is no winner (or <code>TIE</code>) and swap which marker is playing. Once we have a winner, alert the players and let them see the final board.</p>
+
+<p>``` objc
+int main(int argc, const char * argv[])
+{</p>
+
+<pre><code>clearBoard();
+
+char player = X;
+
+while (winner() == 0)
+{
+    userInput(player);
+    player = (player == X) ? O : X;
+}
+
+char result = winner();
+if (result == TIE)
+    printf("Ouch, no winners here.\n");
+else
+    printf("Congratulations %s, you're the winner!\n", nameFor(result));
+
+displayBoard();
+</code></pre>
+
+<p>}
+```</p>
+
+<h3>What if they want to play again?</h3>
+
+<p>It's common practice to ask a player if they want to play again. For those cases when it becomes "best out of three" followed by "best out of five" and so on. So we'll add a variable called <code>playing</code>, we'll set it to <code>'y'</code> for yes, as if the player had chosen to play again. Then, after we show them the winning board, we'll prompt them with <code>y/n</code>, although any non <code>'y'</code> will do,  if they want to play again. If they enter in anything except <code>'y'</code> it will break the game loop and exit the program. In order to get input from the user, we're going to use <code>getchar()</code> again. But remember when we were getting them to play we had to clear the <code>\n</code> or any extra characters? We'll have to do that again here. So why don't we <strong>cut</strong> and paste that code into a function and call it there instead as well as here.</p>
+
+<p>``` objc
+void clearGetChar()
+{</p>
+
+<pre><code>// getchar() gives you one character at a time.
+// so 123 whould need to use getchar() three times.
+// however, when the user selects a spot they type
+// in "1\n" so we need to clear the upto the \n
+// so we don't get it in the next userInput()
+char last = getchar();
+while(last != '\n') // until we reach the \n
+    last = getchar(); // load the next character
+</code></pre>
+
+<p>}
+```</p>
+
+<p>``` objc
+int main(int argc, const char * argv[])
+{</p>
+
+<pre><code>char playing = 'y';
+char player = X;
+
+while(playing == 'y')
+{
+    clearBoard(); // ensure the board is BLANK
+
+    while(winner() == 0) // while there isn't a winner
+    {
+        userInput(player); // ask a player to play
+        player = (player == X) ? O : X; // switch players
+    }
+
+    char result = winner(); // get the winner
+    if(result == TIE) // if the winner was "TIE"
+        printf("Ouch, no winners here.\n");
+    else // X or O won
+        printf("Congratulations %s, you're the winner!\n\n", nameFor(result));
+
+    displayBoard(); // show them their board
+
+    printf("Want to play again? (y/n) ");
+    playing = getchar(); // we're looping on this being 'y' so anything else quits
+    clearGetChar();
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<p>You can download <a href="/downloads/2012-08-24-c-beauty-in-everything-part-1/main.c">my code here</a>.</p>
+
+<h2>What's next?</h2>
+
+<p>In the next part we'll introduce two modes, a single player (against an A.I.) and the multiplayer version we developed here. We'll also try to make it more friendly on the command line by using <a href="http://www.gnu.org/software/ncurses/">ncurses</a> and color. Maybe even introduce a menu system!</p>
+]]></content>
+  </entry>
+  
+</feed>

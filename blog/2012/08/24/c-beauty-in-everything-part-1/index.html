@@ -1,24 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Empty Thoughts]]></title>
-  <link href="http://TheEmpty.github.com/atom.xml" rel="self"/>
-  <link href="http://TheEmpty.github.com/"/>
-  <updated>2012-08-24T05:41:20-04:00</updated>
-  <id>http://TheEmpty.github.com/</id>
-  <author>
-    <name><![CDATA[Mohammad El-Abid]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C Beauty In Everything (Part 1) - Empty Thoughts</title>
+  <meta name="author" content="Mohammad El-Abid">
 
   
-  <entry>
-    <title type="html"><![CDATA[C Beauty In Everything (Part 1)]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/"/>
-    <updated>2012-08-24T12:00:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1</id>
-    <content type="html"><![CDATA[<p>The other day someone was saying how they didn&#8217;t quite like Objective-C. They went on to say how it was weird that the <code>@</code> in front of strings made it harder to read. When I explained that this was to separate character arrays from <code>NSStrings</code> he was curious to why there were,</p>
+  <meta name="description" content="The other day someone was saying how they didn&#8217;t quite like Objective-C. They went on to say how it was weird that the @ in front of strings &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Empty Thoughts" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34176322-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Empty Thoughts</a></h1>
+  
+    <h2>Technology, Animation, Stuff</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:TheEmpty.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/resume">Resume</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C Beauty In Everything (Part 1)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-24T12:00:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The other day someone was saying how they didn&#8217;t quite like Objective-C. They went on to say how it was weird that the <code>@</code> in front of strings made it harder to read. When I explained that this was to separate character arrays from <code>NSStrings</code> he was curious to why there were,</p>
 
 <blockquote><p>Ok, so what the fuck do you need two types of strings for? NSStrings? C-Style strings? Isn&#8217;t a string&#8230;a string? Like&#8230;every other language I&#8217;ve seen only uses one type.</p><footer><strong>TheMaster</strong> <cite><a href='http://webdevrefinery.com/forums/topic/11869-php-a-fractal-of-bad-design/page__view__findpost__p__128102'>wdR Post</a></cite></footer></blockquote>
 
@@ -741,159 +828,182 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>You can download <a href="http://TheEmpty.github.com/downloads/2012-08-24-c-beauty-in-everything-part-1/main.c">my code here</a>.</p>
+<p>You can download <a href="/downloads/2012-08-24-c-beauty-in-everything-part-1/main.c">my code here</a>.</p>
 
 <h2>What&#8217;s next?</h2>
 
 <p>In the next part we&#8217;ll introduce two modes, a single player (against an A.I.) and the multiplayer version we developed here. We&#8217;ll also try to make it more friendly on the command line by using <a href="http://www.gnu.org/software/ncurses/">ncurses</a> and color. Maybe even introduce a menu system!</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[Eid Mubarak!]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak/"/>
-    <updated>2012-08-18T14:30:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak</id>
-    <content type="html"><![CDATA[<p>To those that are ending Eid tomorrow, you can come back tomorrow! <strong>Since I&#8217;m here,</strong> why don&#8217;t I tell you about the post I plan on releasing next Friday? At the bottom is the output of the current program, though it might change a bit. It&#8217;s built in C and only uses the standard io and standard library. It will be a multipart series, with the first part, at least, covering the code to generate the output below. In future parts (or part) (hopefully the Friday after, maybe I&#8217;ll break the schedule and release it early), I&#8217;ll cover A.I. and making a pretty display in the terminal. The post will assume you know how to program and know C-style syntax (Java or JavaScript use C-style syntax). I&#8217;ll also throw in a few links to articles about setting up a C IDE.</p>
 
-<p>I&#8217;ll <strong>C</strong> you later, output after the break.</p>
+<span class="byline author vcard">Posted by <span class="fn">Mohammad El-Abid</span></span>
 
-<!-- more -->
+      
 
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Player X, it's your move.
-</span><span class='line'>
-</span><span class='line'>1 | 2 | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | 5 | 6
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | 9
-</span><span class='line'>
-</span><span class='line'>I'll take spot: 1
-</span><span class='line'>Player O, it's your move.
-</span><span class='line'>
-</span><span class='line'>X | 2 | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | 5 | 6
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | 9
-</span><span class='line'>
-</span><span class='line'>I'll take spot: 2
-</span><span class='line'>Player X, it's your move.
-</span><span class='line'>
-</span><span class='line'>X | O | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | 5 | 6
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | 9
-</span><span class='line'>
-</span><span class='line'>I'll take spot: 5
-</span><span class='line'>Player O, it's your move.
-</span><span class='line'>
-</span><span class='line'>X | O | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | X | 6
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | 9
-</span><span class='line'>
-</span><span class='line'>I'll take spot: 6
-</span><span class='line'>Player X, it's your move.
-</span><span class='line'>
-</span><span class='line'>X | O | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | X | O
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | 9
-</span><span class='line'>
-</span><span class='line'>I'll take spot: 9
-</span><span class='line'>X | O | 3
-</span><span class='line'>--+---+--
-</span><span class='line'>4 | X | O
-</span><span class='line'>--+---+--
-</span><span class='line'>7 | 8 | X
-</span><span class='line'>
-</span><span class='line'>WE HAVE A WINNER!
-</span><span class='line'>Congratulations Player X!
-</span><span class='line'>Do you want to play again? (y/n) n</span></code></pre></td></tr></table></div></figure>
 
-]]></content>
-  </entry>
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/17/hello-world/"/>
-    <updated>2012-08-17T13:06:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/17/hello-world</id>
-    <content type="html"><![CDATA[<p>My name&#8217;s Mohammad El-Abid. I&#8217;ve been working with the web since before I can remember. I love writing about technology, games, and animation. Hopefully this will be a blog of high quality posts updated when I&#8217;m not flooded with school work (<a href="http://bridgeport.edu/">University of Bridgeport</a> 2015) or working with my <a href="http://TheEmpty.github.com/resume">clients</a>.</p>
 
-<h3>Technology</h3>
 
-<p>I currently work as a Ruby on Rails senior developer. But teach in Java, learn C++ at school, use Node.JS for personal projects, C for small/easy utilities, and basic for robotics. I&#8217;ll be talking about issues and patterns I run into and how I fixed the problem. I&#8217;ll probably talk about what I see when I&#8217;m teaching, common mistakes, clever ideas, and such. Every now my technology posts might get blurred with gaming. The <a href="http://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game">Rift</a> looks amazing.</p>
+<time datetime="2012-08-24T12:00:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2012</time>
+      
 
-<h3>Animation</h3>
-
-<p>Thanks to <a href="http://students.autodesk.com">Autodesk&#8217;s educational site</a>, I&#8217;m learning Maya 2013 to replace <a href="http://hash.com/">Animation:Master</a>. I&#8217;m hoping to use my modeling skills to create some basic objects for a game. The game doesn&#8217;t have any specifics, just something I think every programmer wants to do. Game makers are like the rockstars of programmers.</p>
-
-<h3>Games</h3>
-
-<p>I&#8217;ll be playing a bit of <a href="http://guildwars2.com/">Guild Wars 2</a> during school. It will be my first MMORPG. I also play games like Super Meat Boy, DiRT 3 or Showdown, and Tekken. Don&#8217;t expect too much on games or math crunching posts, I&#8217;m not a very good gamer, just someone that enjoys games.</p>
-]]></content>
-  </entry>
+<span class="categories">
   
-</feed>
+    <a class='category' href='/blog/categories/c/'>C</a>, <a class='category' href='/blog/categories/programing/'>programing</a>, <a class='category' href='/blog/categories/technology/'>technology</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/" data-via="the_empty" data-counturl="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/18/eid-mubarak/" title="Previous Post: Eid Mubarak!">&laquo; Eid Mubarak!</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/24/c-beauty-in-everything-part-1/">C Beauty In Everything (Part 1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/18/eid-mubarak/">Eid Mubarak!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/17/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("the_empty", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/the_empty" class="twitter-follow-button" data-show-count="false">Follow @the_empty</a>
+  
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/118289956052223314337?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Mohammad El-Abid -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mohammadelabid';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/';
+        var disqus_url = 'http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
