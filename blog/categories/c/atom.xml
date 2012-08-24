@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: C | Empty Thoughts]]></title>
-  <link href="http://TheEmpty.github.com/blog/categories/c/atom.xml" rel="self"/>
-  <link href="http://TheEmpty.github.com/"/>
-  <updated>2012-08-24T05:41:20-04:00</updated>
-  <id>http://TheEmpty.github.com/</id>
+  <link href="http://mohammad.el-abid.com//blog/categories/c/atom.xml" rel="self"/>
+  <link href="http://mohammad.el-abid.com//"/>
+  <updated>2012-08-24T05:51:52-04:00</updated>
+  <id>http://mohammad.el-abid.com//</id>
   <author>
     <name><![CDATA[Mohammad El-Abid]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[C Beauty In Everything (Part 1)]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/"/>
+    <link href="http://mohammad.el-abid.com//blog/2012/08/24/c-beauty-in-everything-part-1/"/>
     <updated>2012-08-24T12:00:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1</id>
+    <id>http://mohammad.el-abid.com//blog/2012/08/24/c-beauty-in-everything-part-1</id>
     <content type="html"><![CDATA[<p>The other day someone was saying how they didn't quite like Objective-C. They went on to say how it was weird that the <code>@</code> in front of strings made it harder to read. When I explained that this was to separate character arrays from <code>NSStrings</code> he was curious to why there were,</p>
 
 <p><blockquote><p>Ok, so what the fuck do you need two types of strings for? NSStrings? C-Style strings? Isn't a string...a string? Like...every other language I've seen only uses one type.</p><footer><strong>TheMaster</strong> <cite><a href='http://webdevrefinery.com/forums/topic/11869-php-a-fractal-of-bad-design/page<strong>view</strong>findpost<strong>p</strong>128102'>wdR Post</a></cite></footer></blockquote></p>

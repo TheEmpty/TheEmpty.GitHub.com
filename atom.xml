@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Empty Thoughts]]></title>
-  <link href="http://TheEmpty.github.com/atom.xml" rel="self"/>
-  <link href="http://TheEmpty.github.com/"/>
-  <updated>2012-08-24T05:41:20-04:00</updated>
-  <id>http://TheEmpty.github.com/</id>
+  <link href="http://mohammad.el-abid.com//atom.xml" rel="self"/>
+  <link href="http://mohammad.el-abid.com//"/>
+  <updated>2012-08-24T05:51:52-04:00</updated>
+  <id>http://mohammad.el-abid.com//</id>
   <author>
     <name><![CDATA[Mohammad El-Abid]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[C Beauty In Everything (Part 1)]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1/"/>
+    <link href="http://mohammad.el-abid.com//blog/2012/08/24/c-beauty-in-everything-part-1/"/>
     <updated>2012-08-24T12:00:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/24/c-beauty-in-everything-part-1</id>
+    <id>http://mohammad.el-abid.com//blog/2012/08/24/c-beauty-in-everything-part-1</id>
     <content type="html"><![CDATA[<p>The other day someone was saying how they didn&#8217;t quite like Objective-C. They went on to say how it was weird that the <code>@</code> in front of strings made it harder to read. When I explained that this was to separate character arrays from <code>NSStrings</code> he was curious to why there were,</p>
 
 <blockquote><p>Ok, so what the fuck do you need two types of strings for? NSStrings? C-Style strings? Isn&#8217;t a string&#8230;a string? Like&#8230;every other language I&#8217;ve seen only uses one type.</p><footer><strong>TheMaster</strong> <cite><a href='http://webdevrefinery.com/forums/topic/11869-php-a-fractal-of-bad-design/page__view__findpost__p__128102'>wdR Post</a></cite></footer></blockquote>
@@ -741,7 +741,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>You can download <a href="http://TheEmpty.github.com/downloads/2012-08-24-c-beauty-in-everything-part-1/main.c">my code here</a>.</p>
+<p>You can download <a href="http://mohammad.el-abid.com//downloads/2012-08-24-c-beauty-in-everything-part-1/main.c">my code here</a>.</p>
 
 <h2>What&#8217;s next?</h2>
 
@@ -751,9 +751,9 @@
   
   <entry>
     <title type="html"><![CDATA[Eid Mubarak!]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak/"/>
+    <link href="http://mohammad.el-abid.com//blog/2012/08/18/eid-mubarak/"/>
     <updated>2012-08-18T14:30:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/18/eid-mubarak</id>
+    <id>http://mohammad.el-abid.com//blog/2012/08/18/eid-mubarak</id>
     <content type="html"><![CDATA[<p>To those that are ending Eid tomorrow, you can come back tomorrow! <strong>Since I&#8217;m here,</strong> why don&#8217;t I tell you about the post I plan on releasing next Friday? At the bottom is the output of the current program, though it might change a bit. It&#8217;s built in C and only uses the standard io and standard library. It will be a multipart series, with the first part, at least, covering the code to generate the output below. In future parts (or part) (hopefully the Friday after, maybe I&#8217;ll break the schedule and release it early), I&#8217;ll cover A.I. and making a pretty display in the terminal. The post will assume you know how to program and know C-style syntax (Java or JavaScript use C-style syntax). I&#8217;ll also throw in a few links to articles about setting up a C IDE.</p>
 
 <p>I&#8217;ll <strong>C</strong> you later, output after the break.</p>
@@ -877,10 +877,10 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://TheEmpty.github.com/blog/2012/08/17/hello-world/"/>
+    <link href="http://mohammad.el-abid.com//blog/2012/08/17/hello-world/"/>
     <updated>2012-08-17T13:06:00-04:00</updated>
-    <id>http://TheEmpty.github.com/blog/2012/08/17/hello-world</id>
-    <content type="html"><![CDATA[<p>My name&#8217;s Mohammad El-Abid. I&#8217;ve been working with the web since before I can remember. I love writing about technology, games, and animation. Hopefully this will be a blog of high quality posts updated when I&#8217;m not flooded with school work (<a href="http://bridgeport.edu/">University of Bridgeport</a> 2015) or working with my <a href="http://TheEmpty.github.com/resume">clients</a>.</p>
+    <id>http://mohammad.el-abid.com//blog/2012/08/17/hello-world</id>
+    <content type="html"><![CDATA[<p>My name&#8217;s Mohammad El-Abid. I&#8217;ve been working with the web since before I can remember. I love writing about technology, games, and animation. Hopefully this will be a blog of high quality posts updated when I&#8217;m not flooded with school work (<a href="http://bridgeport.edu/">University of Bridgeport</a> 2015) or working with my <a href="http://mohammad.el-abid.com//resume">clients</a>.</p>
 
 <h3>Technology</h3>
 
