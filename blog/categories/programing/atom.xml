@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programing | Empty Thoughts]]></title>
   <link href="http://mohammad.el-abid.com//blog/categories/programing/atom.xml" rel="self"/>
   <link href="http://mohammad.el-abid.com//"/>
-  <updated>2012-09-05T14:39:49-04:00</updated>
+  <updated>2013-02-13T10:01:02-05:00</updated>
   <id>http://mohammad.el-abid.com//</id>
   <author>
     <name><![CDATA[Mohammad El-Abid]]></name>
@@ -12,6 +12,129 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Base Conversions]]></title>
+    <link href="http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/"/>
+    <updated>2013-02-13T12:00:00-05:00</updated>
+    <id>http://mohammad.el-abid.com//blog/2013/02/13/base-conversions</id>
+    <content type="html"><![CDATA[<h1>Base Conversions</h1>
+
+<p>This is just a quick run through for some of my fellow peers. So forgive me for the roughness.</p>
+
+<!-- more -->
+
+
+<h2>Questions</h2>
+
+<pre><code>Convert 0xF0B0 to binary
+Convert 0xF0B0 to octadecimal
+Convert 0xF0B0 to decimal
+Convert 200 base 7 to decimal
+Convert 200 to base 2
+</code></pre>
+
+<h2>Table</h2>
+
+<p>This table is created by counting in binary and you should be able to do it on your own. The methods I use to convert with binary only work with bases that are powers of two. Octadecimal(octa means 8) takes three bits because 2<sup>3</sup> = 8 and for hexadecimal(hexa means 16) four bits because 2<sup>4</sup> = 16.</p>
+
+<pre><code>╔═════════════╦══════════════════════╦══════════════════════╗
+║ Hexadecimal ║ Octadecimal (binary) ║ Hexadecimal (binary) ║
+╠═════════════╬══════════════════════╬══════════════════════╣
+║ 0           ║ 000                  ║                 0000 ║
+║ 1           ║ 001                  ║                 0001 ║
+║ 2           ║ 010                  ║                 0010 ║
+║ 3           ║ 011                  ║                 0011 ║
+║ 4           ║ 100                  ║                 0100 ║
+║ 5           ║ 101                  ║                 0101 ║
+║ 6           ║ 110                  ║                 0110 ║
+║ 7           ║ 111                  ║                 0111 ║
+║ 8           ║ N/A                  ║                 1000 ║
+║ 9           ║ N/A                  ║                 1001 ║
+║ A           ║ N/A                  ║                 1010 ║
+║ B           ║ N/A                  ║                 1011 ║
+║ C           ║ N/A                  ║                 1100 ║
+║ D           ║ N/A                  ║                 1101 ║
+║ E           ║ N/A                  ║                 1110 ║
+║ F           ║ N/A                  ║                 1111 ║
+╚═════════════╩══════════════════════╩══════════════════════╝
+</code></pre>
+
+<h2>Solutions</h2>
+
+<h3>OxF0B0 to binary</h3>
+
+<p>First we list the numbers and their binary equivalent.</p>
+
+<pre><code>F = 1111
+0 = 0000
+B = 1011
+0 = 0000
+</code></pre>
+
+<p>Then we join them, from right to left (or if you wrote your binary equivalencies like mine above, bottom to top).</p>
+
+<pre><code>0xF0B0 = 1111 0000 1011 0000
+</code></pre>
+
+<p>Once you're comftorable with this, you can skip the first step and just read it from left to right, writing the binary equivalencies as you go.</p>
+
+<h3>0xF0B0 to octadecimal</h3>
+
+<p>First convert to binary, we'll use the answer from above. Then separate into groups of three, starting from the right.</p>
+
+<pre><code>1 111 000 010 110 000
+</code></pre>
+
+<p>Here we'll add leading zeros so 1 matches 001 on our table. This doesn't change the value, if you prepend a zero to your age (ex: 18 -> 018) it is still the same number.</p>
+
+<pre><code>001 111 000 010 110 000
+</code></pre>
+
+<p> Now replace with their octadeimal equivalent (use table if needed)</p>
+
+<pre><code> 1 7 0 2 6 0 = 170260 base 8
+</code></pre>
+
+<h3>0xF0B0 to decimal</h3>
+
+<p>Read the number right to left. Since this is base 16, the 0 is in the 16<sup>0</sup> slot. B (decimal equivalent is 11) is in the 16<sup>1</sup> slot. So we take 11 * 16<sup>1</sup> to get the decimal value of just that slot. So the whole number would look something like this:</p>
+
+<pre><code>0xF0B0 -&gt; decimal
+0 * 16^0 + 11 * 16^1 + 0 * 16^2 + 15 * 16^3
+= 11 * 16 + 15 * 16^3
+= 61616
+</code></pre>
+
+<h3>200 to base 2</h3>
+
+<p>We'll start by dividing two (the base) into 200 (the number we want to represent). We'll keep track of the remainders and stop when we reach a number less than the base.</p>
+
+<pre><code>2 |200 remainder: 0
+2 |100 remainder: 0
+2  |50 remainder: 0
+2  |25 remainder: 1
+2  |12 remainder: 0
+2   |6 remainder: 0
+2   |3 remainder: 1
+    |1
+</code></pre>
+
+<p>We stop when the number becomes less than what we are dividing by (this works for other bases besides two). We then carry over that number under the remainders, so</p>
+
+<pre><code>2 |200 remainder: 0
+2 |100 remainder: 0
+2  |50 remainder: 0
+2  |25 remainder: 1
+2  |12 remainder: 0
+2   |6 remainder: 0
+2   |3 remainder: 1
+    |1            1
+</code></pre>
+
+<p>Now, use it as a stack (read it backwards) and you'll get <code>1100 1000</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[C Beauty In Everything (Part 1)]]></title>

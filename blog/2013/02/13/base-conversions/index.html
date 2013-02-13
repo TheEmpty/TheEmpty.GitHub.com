@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Base Conversions - Empty Thoughts</title>
+  <meta name="author" content="Mohammad El-Abid">
+
+  
+  <meta name="description" content="Base Conversions This is just a quick run through for some of my fellow peers. So forgive me for the roughness. Questions Convert 0xF0B0 to binary &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Empty Thoughts" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34176322-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Empty Thoughts</a></h1>
+  
+    <h2>Technology, Animation, and Other Thoughts</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:mohammad.el-abid.com/" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/resume">Resume</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Base Conversions</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T12:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>Base Conversions</h1>
+
+<p>This is just a quick run through for some of my fellow peers. So forgive me for the roughness.</p>
+
+<!-- more -->
+
+
+<h2>Questions</h2>
+
+<pre><code>Convert 0xF0B0 to binary
+Convert 0xF0B0 to octadecimal
+Convert 0xF0B0 to decimal
+Convert 200 base 7 to decimal
+Convert 200 to base 2
+</code></pre>
+
+<h2>Table</h2>
+
+<p>This table is created by counting in binary and you should be able to do it on your own. The methods I use to convert with binary only work with bases that are powers of two. Octadecimal(octa means 8) takes three bits because 2<sup>3</sup> = 8 and for hexadecimal(hexa means 16) four bits because 2<sup>4</sup> = 16.</p>
+
+<pre><code>╔═════════════╦══════════════════════╦══════════════════════╗
+║ Hexadecimal ║ Octadecimal (binary) ║ Hexadecimal (binary) ║
+╠═════════════╬══════════════════════╬══════════════════════╣
+║ 0           ║ 000                  ║                 0000 ║
+║ 1           ║ 001                  ║                 0001 ║
+║ 2           ║ 010                  ║                 0010 ║
+║ 3           ║ 011                  ║                 0011 ║
+║ 4           ║ 100                  ║                 0100 ║
+║ 5           ║ 101                  ║                 0101 ║
+║ 6           ║ 110                  ║                 0110 ║
+║ 7           ║ 111                  ║                 0111 ║
+║ 8           ║ N/A                  ║                 1000 ║
+║ 9           ║ N/A                  ║                 1001 ║
+║ A           ║ N/A                  ║                 1010 ║
+║ B           ║ N/A                  ║                 1011 ║
+║ C           ║ N/A                  ║                 1100 ║
+║ D           ║ N/A                  ║                 1101 ║
+║ E           ║ N/A                  ║                 1110 ║
+║ F           ║ N/A                  ║                 1111 ║
+╚═════════════╩══════════════════════╩══════════════════════╝
+</code></pre>
+
+<h2>Solutions</h2>
+
+<h3>OxF0B0 to binary</h3>
+
+<p>First we list the numbers and their binary equivalent.</p>
+
+<pre><code>F = 1111
+0 = 0000
+B = 1011
+0 = 0000
+</code></pre>
+
+<p>Then we join them, from right to left (or if you wrote your binary equivalencies like mine above, bottom to top).</p>
+
+<pre><code>0xF0B0 = 1111 0000 1011 0000
+</code></pre>
+
+<p>Once you&#8217;re comftorable with this, you can skip the first step and just read it from left to right, writing the binary equivalencies as you go.</p>
+
+<h3>0xF0B0 to octadecimal</h3>
+
+<p>First convert to binary, we&#8217;ll use the answer from above. Then separate into groups of three, starting from the right.</p>
+
+<pre><code>1 111 000 010 110 000
+</code></pre>
+
+<p>Here we&#8217;ll add leading zeros so 1 matches 001 on our table. This doesn&#8217;t change the value, if you prepend a zero to your age (ex: 18 -> 018) it is still the same number.</p>
+
+<pre><code>001 111 000 010 110 000
+</code></pre>
+
+<p> Now replace with their octadeimal equivalent (use table if needed)</p>
+
+<pre><code> 1 7 0 2 6 0 = 170260 base 8
+</code></pre>
+
+<h3>0xF0B0 to decimal</h3>
+
+<p>Read the number right to left. Since this is base 16, the 0 is in the 16<sup>0</sup> slot. B (decimal equivalent is 11) is in the 16<sup>1</sup> slot. So we take 11 * 16<sup>1</sup> to get the decimal value of just that slot. So the whole number would look something like this:</p>
+
+<pre><code>0xF0B0 -&gt; decimal
+0 * 16^0 + 11 * 16^1 + 0 * 16^2 + 15 * 16^3
+= 11 * 16 + 15 * 16^3
+= 61616
+</code></pre>
+
+<h3>200 to base 2</h3>
+
+<p>We&#8217;ll start by dividing two (the base) into 200 (the number we want to represent). We&#8217;ll keep track of the remainders and stop when we reach a number less than the base.</p>
+
+<pre><code>2 |200 remainder: 0
+2 |100 remainder: 0
+2  |50 remainder: 0
+2  |25 remainder: 1
+2  |12 remainder: 0
+2   |6 remainder: 0
+2   |3 remainder: 1
+    |1
+</code></pre>
+
+<p>We stop when the number becomes less than what we are dividing by (this works for other bases besides two). We then carry over that number under the remainders, so</p>
+
+<pre><code>2 |200 remainder: 0
+2 |100 remainder: 0
+2  |50 remainder: 0
+2  |25 remainder: 1
+2  |12 remainder: 0
+2   |6 remainder: 0
+2   |3 remainder: 1
+    |1            1
+</code></pre>
+
+<p>Now, use it as a stack (read it backwards) and you&#8217;ll get <code>1100 1000</code></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Mohammad El-Abid</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-13T12:00:00-05:00" pubdate data-updated="true">Feb 13<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/base-conversion/'>base conversion</a>, <a class='category' href='/blog/categories/math/'>math</a>, <a class='category' href='/blog/categories/programing/'>programing</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/" data-via="the_empty" data-counturl="http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/24/c-beauty-in-everything-part-1/" title="Previous Post: C Beauty In Everything (Part 1)">&laquo; C Beauty In Everything (Part 1)</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/13/base-conversions/">Base Conversions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/24/c-beauty-in-everything-part-1/">C Beauty In Everything (Part 1)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/18/eid-mubarak/">Eid Mubarak!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/17/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("the_empty", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/the_empty" class="twitter-follow-button" data-show-count="false">Follow @the_empty</a>
+  
+</section>
+
+
+
+<section class="googleplus googleplus-hidden">
+  <h1>
+    <a href="https://plus.google.com/118289956052223314337?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Mohammad El-Abid -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mohammadelabid';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/';
+        var disqus_url = 'http://mohammad.el-abid.com//blog/2013/02/13/base-conversions/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
